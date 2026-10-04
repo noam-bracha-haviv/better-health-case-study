@@ -1,0 +1,33 @@
+.link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.captionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.open {
+  flex: none;
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  font-weight: 500;
+  color: var(--color-link-blue);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.open:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .captionRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

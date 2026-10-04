@@ -1,0 +1,33 @@
+.box {
+  width: 100%;
+  border-radius: var(--radius-image);
+  border: 1px dashed var(--color-border-image-olive);
+  background: var(--color-card-bg-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+  color: var(--color-text-heading);
+}
+
+.note {
+  display: block;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-body);
+  max-width: 420px;
+}

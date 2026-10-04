@@ -1,0 +1,84 @@
+/* Key moments: one aligned row inside the content column. */
+.moments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 16px;
+}
+
+.flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Real screens: only the top control row is trimmed. Subtle radius and a
+   soft shadow, no strokes or cards. */
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 500 / 1013;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(20, 24, 40, 0.1);
+}
+
+.stepTitle {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--color-text-ink);
+}
+
+.stepNum {
+  color: var(--color-divider-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.stepText {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--color-text-body);
+}
+
+.tryTitle {
+  margin-top: 40px !important;
+}
+
+/* Tablet / mobile: key moments become a swipeable strip. */
+@media (max-width: 900px) {
+  .flow {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 4px 0 24px;
+    scrollbar-width: none;
+  }
+
+  .flow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    flex: 0 0 min(200px, 46vw);
+    scroll-snap-align: start;
+  }
+}

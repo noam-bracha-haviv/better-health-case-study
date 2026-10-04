@@ -1,0 +1,48 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Same pill language as the mobile SectionNav and the Before/After toggle. */
+.toggle {
+  display: inline-flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 28px;
+  background: var(--color-card-bg-1);
+}
+
+.option {
+  border: none;
+  background: none;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  color: var(--color-text-body);
+  transition: background 0.15s var(--ease-standard), color 0.15s var(--ease-standard);
+}
+
+.optionActive {
+  background: var(--color-text-heading);
+  color: var(--color-bg);
+}
+
+.summary {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--color-text-body);
+}
+
+@media (max-width: 768px) {
+  .option {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}

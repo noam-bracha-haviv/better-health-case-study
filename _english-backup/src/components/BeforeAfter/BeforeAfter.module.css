@@ -1,0 +1,104 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Same pill language as the mobile SectionNav. */
+.toggle {
+  display: inline-flex;
+  align-self: flex-start;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--color-card-bg-1);
+}
+
+.option {
+  border: none;
+  background: none;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-body);
+  transition: background 0.15s var(--ease-standard), color 0.15s var(--ease-standard);
+}
+
+.optionActive {
+  background: var(--color-text-heading);
+  color: var(--color-bg);
+}
+
+.frame {
+  border-radius: var(--radius-image);
+  border: 1px solid var(--color-border-image-olive);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  padding: 0 16px;
+  background: var(--color-card-bg-1);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-border-image-olive);
+  opacity: 0.6;
+}
+
+.url {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-body);
+  text-align: center;
+  padding-right: 43px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewport {
+  height: 620px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  outline: none;
+}
+
+.page {
+  width: 100%;
+  height: auto;
+}
+
+.hint {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-divider-strong);
+}
+
+@media (max-width: 768px) {
+  .viewport {
+    height: 480px;
+  }
+  .url {
+    padding-right: 0;
+  }
+}
