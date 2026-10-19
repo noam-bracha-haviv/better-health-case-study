@@ -29,7 +29,7 @@ export default function HandoffSection() {
 
       <h3>Status</h3>
       <p>
-        The Pre-Arrival Guide has been designed and implemented. The in-headset
+        The Pre-Arrival Guide is live in production. The in-headset
         onboarding experience has been fully designed and is currently in
         development.
       </p>

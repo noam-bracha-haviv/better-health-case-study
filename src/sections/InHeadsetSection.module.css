@@ -1,0 +1,19 @@
+/* Full flow map: column width on desktop; on narrow screens it keeps a
+   readable size and scrolls sideways instead of shrinking. */
+.mapScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .map {
+    width: 720px;
+    max-width: none;
+  }
+}

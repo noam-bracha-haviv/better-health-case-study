@@ -35,11 +35,20 @@ export default function OpportunitySection() {
         over the phone.
       </p>
       <p>
-        Rather than relying only on guidance inside VR, we decided to{' '}
+        Seeing this pattern across the calls, I proposed moving Wi-Fi
+        preparation earlier in the journey: rather than relying only on
+        guidance inside VR,{' '}
         <Highlight>help members prepare before putting on the headset.</Highlight>{' '}
-        The Pre-Arrival Guide lets them find and save their Wi-Fi details on a
-        familiar device, so they can enter VR with the information already at
-        hand.
+        I brought this direction to the Head of Product, we reviewed it
+        together, and it was approved.
+      </p>
+      <p>
+        From there, I defined and designed how the solution would work,
+        including the flow and the fallback for members who don&rsquo;t yet
+        have their Wi-Fi details ready. The result was the Pre-Arrival Guide,
+        which lets members find and save those details on a familiar device
+        before entering VR. I kept iterating on it with feedback from the Head
+        of Product.
       </p>
       <p>
         This shaped a broader principle for the new onboarding: give members

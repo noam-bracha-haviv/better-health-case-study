@@ -4,17 +4,14 @@ import ImageGallery from '../components/ImageGallery/ImageGallery';
 import StageLabel from '../components/StageLabel/StageLabel';
 import Caption from '../components/Caption/Caption';
 import { Highlight, HighlightQuote } from '../components/Highlight/Highlight';
+import { asset } from '../utils/asset';
+import styles from './InHeadsetSection.module.css';
 
 const opening = [
   {
     src: '/assets/final/01-brand.jpg',
     alt: 'Brand opening: Better Health, Your wellness, immersive',
     caption: 'Headset on: the brand holds the room while the app loads, then moves on by itself.',
-  },
-  {
-    src: '/assets/final/02a-permission.jpg',
-    alt: 'Headset system dialog asking to allow the app to find and connect to nearby devices',
-    caption: 'Wi-Fi readiness starts with the headset’s own permission dialog, owned by the operating system.',
   },
   {
     src: '/assets/final/02b-branch.jpg',
@@ -31,7 +28,7 @@ const helpPath = [
   },
   {
     src: '/assets/final/03-iphone-1.jpg',
-    alt: 'Step 1 of 5: First, open the Settings app on your iPhone',
+    alt: 'Betty, with a segmented progress bar: First, open the Settings app on your iPhone. Back / Done',
     caption: 'The guide’s own steps and wording, one instruction at a time, no scrolling.',
   },
   {
@@ -41,10 +38,28 @@ const helpPath = [
   },
 ];
 
+const controllerGuide = [
+  {
+    src: '/assets/final/06c-trigger.jpg',
+    alt: 'Controller guide, step 3 of 7: Squeeze the trigger, with the trigger highlighted on the controller',
+    caption: 'One control per step, with the control highlighted on the controller itself.',
+  },
+  {
+    src: '/assets/final/06e-press-a.jpg',
+    alt: 'Controller guide, step 5 of 7: Press A (Right Controller), with the A button highlighted',
+    caption: 'Each step names the exact button and which hand it is on.',
+  },
+  {
+    src: '/assets/final/06g-point.jpg',
+    alt: 'Controller guide, step 7 of 7: Point and press, with the controller aiming at a target',
+    caption: 'The last step brings the controls together: point at a target and press.',
+  },
+];
+
 const personalization = [
   {
     src: '/assets/final/07-betty.jpg',
-    alt: 'Betty: Great, you’re ready. Four short questions. There are no right or wrong answers.',
+    alt: 'Betty: Great, you’re ready. Now I’d like to get to know you a little, so we can personalize your experience. Four short questions, there are no right or wrong answers. Let’s go',
     caption: 'Betty frames what comes next: four short questions, no right or wrong answers.',
   },
   {
@@ -53,13 +68,13 @@ const personalization = [
     caption: 'What the member would most like to work on.',
   },
   {
-    src: '/assets/final/09-q2.jpg',
-    alt: 'Have you tried anything in the past that helped you feel better?',
-    caption: 'What has helped before.',
+    src: '/assets/final/10-q3.jpg',
+    alt: 'Where would you feel most comfortable starting? By the ocean, in nature, somewhere warm and peaceful, surprise me',
+    caption: 'Where they’d feel most comfortable starting.',
   },
   {
     src: '/assets/final/11-q4.jpg',
-    alt: 'One last question. How would you like to begin? Something gentle and easy, jump right in, a recommendation, no preference',
+    alt: 'How would you like to begin? Something gentle and easy, I’m ready to jump right in, I’d like you to recommend where to start, I don’t have a preference',
     caption: 'The pace they’d like to begin at. The same pattern throughout, with no new mechanics.',
   },
   {
@@ -72,17 +87,38 @@ const personalization = [
 export default function InHeadsetSection() {
   return (
     <CaseStudySection id="in-headset" label="In-headset onboarding">
+      <StageLabel>Designed · In development</StageLabel>
       <p>
-        I designed the in-headset onboarding flow. Earlier iterations kept more
-        of the setup inside the headset; research led us to move Wi-Fi
-        preparation earlier while keeping an in-headset fallback.
+        I defined and designed the in-headset onboarding: the overall flow, how
+        it behaves, and the UX/UI. That meant mapping every path a member could
+        take between putting on the headset and starting their first session,
+        including the states in between, the device-specific help paths, and
+        the points where a member who is stuck can recover and continue. I
+        worked through these decisions with the Head of Product, presenting
+        each direction, taking feedback, and iterating.
       </p>
+      <p>
+        Earlier iterations kept more of the setup inside the headset. With
+        Wi-Fi preparation moved earlier, the headset no longer has to carry the
+        whole setup, but it still has to work for members who never prepared.
+      </p>
+      <div className="stack-16">
+        <StageLabel>Final in-headset flow</StageLabel>
+        <div className={styles.mapScroll}>
+          <img
+            className={styles.map}
+            src={asset('/assets/final/flow-map.png')}
+            alt="Map of the in-headset onboarding: eight stages from the opening to the hand-off to PsyTechVR, and a help path with four device-specific step sequences that all return to the Wi-Fi connection screen"
+            loading="lazy"
+          />
+        </div>
+        <Caption>The complete in-headset flow: 40+ screens and states, including four device-specific help paths that all return to the same connection screen.</Caption>
+      </div>
 
       <h3>Opening and Wi-Fi readiness</h3>
       <p>
-        The flow opens on the Better Health brand while the app loads, then
-        asks for the headset&rsquo;s Wi-Fi permission. Betty follows with a
-        single question:{' '}
+        The flow opens on the Better Health brand while the app loads. Betty
+        then asks a single question:{' '}
         <Highlight>does the member have their Wi-Fi name and password ready?</Highlight>{' '}
         It asks what they need now, not whether they completed the Pre-Arrival
         Guide.
@@ -126,9 +162,10 @@ export default function InHeadsetSection() {
         <Caption>A member, during a recorded onboarding call</Caption>
       </div>
       <p>
-        So we brought a small taste of the experience forward. Right after the
+        So I brought a small taste of the experience forward. Right after the
         headset connects, a short preview shows the member where their sessions
-        will take them, before the flow asks for any more effort. The idea is{' '}
+        will take them, then moves on by itself, before the flow asks for any
+        more effort. The idea is{' '}
         <Highlight>value before questions:</Highlight> experience something
         first, then continue into the guided questions. It&rsquo;s a
         research-informed design decision, not a measured outcome, and the
@@ -136,18 +173,19 @@ export default function InHeadsetSection() {
       </p>
       <div className="stack-16">
         <StageLabel>Final flow &middot; Preview (video placeholder)</StageLabel>
-        <MediaFrame src="/assets/final/05-preview.jpg" alt="VR experience preview: This is where your sessions will take you" ratio={16 / 9} square />
+        <MediaFrame src="/assets/final/05-preview.jpg" alt="Placeholder for the VR experience preview film: a mountain landscape" ratio={16 / 9} square />
       </div>
 
       <p>
-        After the preview, the flow moves into the controller guide, a separate
-        interactive VR module where members practise using the controllers
-        themselves. It sits in the flow as a placeholder; the module itself is
-        not part of my design work.
+        After the preview, the flow moves into the controller guide: seven short
+        steps that teach the controls one at a time, from squeezing the trigger
+        to pointing and pressing. I designed the guidance screens and
+        integrated them into the onboarding flow; the interactive controller
+        module itself is being developed separately by Andrés.
       </p>
       <div className="stack-16">
-        <StageLabel>Placeholder &middot; Controller guide</StageLabel>
-        <MediaFrame src="/assets/final/06-controller.jpg" alt="Placeholder for the interactive controller guide" ratio={16 / 9} square />
+        <StageLabel>Final flow &middot; Controller guide</StageLabel>
+        <ImageGallery images={controllerGuide} ratio={16 / 9} border="none" square label="Controller guide" />
       </div>
 
       <h3>Betty and guided personalization</h3>

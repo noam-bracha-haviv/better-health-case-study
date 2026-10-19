@@ -35,6 +35,7 @@ const moments = [
 export default function PreArrivalSection() {
   return (
     <CaseStudySection id="pre-arrival" label="Pre-Arrival Guide">
+      <StageLabel>Live in production</StageLabel>
       <p>
         I designed the Pre-Arrival Guide, a short mobile-first web experience
         that helps members find their Wi-Fi name and password before the
@@ -43,7 +44,11 @@ export default function PreArrivalSection() {
         have their details ready for setup.
       </p>
       <p>
-        <strong>Designed and implemented for member onboarding.</strong>
+        Beyond the Figma designs, I built an interactive, responsive prototype
+        of the guide in HTML, CSS and JavaScript with Claude Code, and
+        contributed it to the product repository through a GitHub pull
+        request. Better Health&rsquo;s engineering team built the production
+        version, which is now live for members.
       </p>
 
       <div className={styles.moments}>
